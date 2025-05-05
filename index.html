@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Sharif</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <video autoplay muted loop id="bg-video">
+    <source src="assets/birthday.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+  <audio autoplay loop>
+    <source src="assets/music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="content">
+    <h1 id="message"></h1>
+  </div>
+
+  <script>
+    const text = "Happy Birthday Sharif❤️";
+    let index = 0;
+    const speed = 100;
+    const messageEl = document.getElementById("message");
+
+    function typeText() {
+      if (index < text.length) {
+        messageEl.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeText, speed);
+      }
+    }
+
+    typeText();
+  </script>
+</body>
+</html>
